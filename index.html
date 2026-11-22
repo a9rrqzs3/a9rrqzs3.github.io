@@ -1,0 +1,1261 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>俄罗斯引擎官网 - 引擎技术与动力文化影像平台 - 驱动热爱</title>
+<meta name="description" content="俄罗斯引擎官方网站，聚焦发动机技术与动力文化的视频内容平台，汇聚工程师、机械创作者与动力爱好者，呈现原创高清的行业观察与品牌故事。">
+<style>
+:root{
+  --ink:#12161c;
+  --ink-2:#1c232d;
+  --paper:#f4f6f8;
+  --card:#ffffff;
+  --line:#dfe4ea;
+  --accent:#ff5a1f;
+  --accent-2:#ffb020;
+  --steel:#5b6b7c;
+  --cool:#2b4a68;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(18,22,28,.08);
+  --max:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  background:var(--paper);color:var(--ink);line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.container{max-width:var(--max);margin:0 auto;padding:0 22px}
+h2{font-size:clamp(22px,2.6vw,32px);letter-spacing:.5px;line-height:1.35}
+h3{font-size:18px;line-height:1.5}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:3px;color:var(--accent);font-weight:700;text-transform:uppercase}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--accent);display:inline-block}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:28px;flex-wrap:wrap}
+.section-head p{color:var(--steel);max-width:560px;font-size:14.5px}
+.sec{padding:72px 0;scroll-margin-top:130px}
+.sec.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* 吸顶公告 + 页头 */
+.sticky-wrap{position:sticky;top:0;z-index:90}
+.notice-bar{
+  background:linear-gradient(90deg,#12161c,#28323f 55%,#12161c);
+  color:#e8eef4;font-size:13px;letter-spacing:.3px;
+}
+.notice-bar .container{display:flex;align-items:center;gap:14px;height:40px;overflow:hidden}
+.notice-bar .tag{background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px;letter-spacing:1px;white-space:nowrap}
+.notice-track{flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:#cfd8e2}
+.notice-track b{color:#fff;font-weight:600}
+.notice-bar a{color:var(--accent-2);font-size:12.5px;white-space:nowrap;border-bottom:1px dashed rgba(255,176,32,.5)}
+header.site{
+  background:rgba(244,246,248,.94);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;gap:26px;height:72px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:19px;letter-spacing:.5px;white-space:nowrap}
+.logo .mark{
+  width:36px;height:36px;border-radius:10px;background:var(--ink);position:relative;flex:none;
+  display:grid;place-items:center;color:#fff;font-size:15px;font-weight:800;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);
+}
+.logo .mark::after{content:"";position:absolute;right:-3px;top:-3px;width:11px;height:11px;border-radius:50%;background:var(--accent);border:2px solid var(--paper)}
+.logo small{display:block;font-size:10px;letter-spacing:2.5px;color:var(--steel);font-weight:600}
+nav.main{display:flex;gap:4px;margin-left:8px}
+nav.main a{padding:8px 12px;border-radius:8px;font-size:14.5px;color:#37414d;transition:.2s}
+nav.main a:hover{background:#e7ebf0;color:var(--ink)}
+.nav-tools{margin-left:auto;display:flex;align-items:center;gap:10px}
+.search{position:relative;display:flex;align-items:center}
+.search input{
+  width:200px;height:38px;border-radius:20px;border:1px solid var(--line);
+  background:#fff;padding:0 40px 0 16px;font-size:13.5px;outline:none;transition:.25s;
+}
+.search input:focus{width:250px;border-color:var(--accent);box-shadow:0 0 0 3px rgba(255,90,31,.12)}
+.search button{position:absolute;right:4px;width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;font-size:14px;display:grid;place-items:center}
+.search-hint{
+  position:absolute;top:46px;left:0;right:0;min-width:260px;background:#fff;border:1px solid var(--line);
+  border-radius:12px;box-shadow:var(--shadow);padding:8px;font-size:13px;display:none;z-index:60;
+}
+.search-hint.show{display:block}
+.search-hint div{padding:7px 10px;border-radius:7px;color:#46505c}
+.search-hint div:hover{background:#f1f4f7}
+.search-hint .none{color:#98a3ae}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 22px;border-radius:22px;
+  font-size:14px;font-weight:600;transition:.22s;white-space:nowrap;
+}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 18px rgba(255,90,31,.28)}
+.btn-primary:hover{background:#e94e14;transform:translateY(-2px)}
+.btn-ghost{border:1px solid #c9d1da;color:var(--ink);background:#fff}
+.btn-ghost:hover{border-color:var(--ink)}
+.burger{display:none;width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:#fff;place-items:center}
+.burger span{display:block;width:18px;height:2px;background:var(--ink);position:relative}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--ink)}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+
+/* 首屏 */
+.hero{padding:56px 0 64px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:5.4fr 4.6fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.16;letter-spacing:1px;margin:18px 0 16px}
+.hero h1 em{font-style:normal;color:var(--accent);position:relative}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:9px;background:rgba(255,90,31,.16);z-index:-1}
+.hero .lead{font-size:15.5px;color:#48525e;max-width:540px}
+.hero .intro{margin-top:18px;font-size:14.5px;color:#5b6675;border-left:3px solid var(--accent);padding-left:16px}
+.hero-actions{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.stats{display:flex;gap:38px;margin-top:34px;flex-wrap:wrap}
+.stat b{display:block;font-size:26px;letter-spacing:.5px;color:var(--ink)}
+.stat span{font-size:12.5px;color:var(--steel);letter-spacing:1px}
+.hero-visual{position:relative}
+.hero-visual .frame{
+  border-radius:20px;overflow:hidden;box-shadow:0 26px 60px rgba(18,22,28,.2);position:relative;
+  border:1px solid rgba(18,22,28,.06);
+}
+.hero-visual .frame img{width:100%;height:auto;display:block}
+.hero-badge{
+  position:absolute;left:-16px;bottom:24px;background:#fff;border-radius:14px;padding:12px 16px;
+  box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;font-size:13px;
+}
+.hero-badge .dot{width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.16)}
+.hero-badge b{display:block;font-size:13.5px}
+.hero-badge span{color:var(--steel);font-size:11.5px}
+.hero-tape{
+  position:absolute;right:-14px;top:-14px;background:var(--ink);color:#fff;border-radius:12px;
+  padding:10px 14px;font-size:12px;letter-spacing:2px;writing-mode:horizontal-tb;
+  box-shadow:var(--shadow);
+}
+.hero-tape i{color:var(--accent-2);font-style:normal}
+
+/* 焦点内容 */
+.focus-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:22px}
+.vcard{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  transition:.25s;display:flex;flex-direction:column;position:relative;
+}
+.vcard:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#c9d1da}
+.cover{position:relative;aspect-ratio:16/9;overflow:hidden;background:#0e1218}
+.cover img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.vcard:hover .cover img{transform:scale(1.05)}
+.cover .play{
+  position:absolute;inset:0;margin:auto;width:52px;height:52px;border-radius:50%;
+  background:rgba(255,255,255,.9);display:grid;place-items:center;color:var(--ink);
+  font-size:16px;padding-left:3px;box-shadow:0 6px 18px rgba(0,0,0,.25);transition:.25s;
+}
+.vcard:hover .play{background:var(--accent);color:#fff;transform:scale(1.08)}
+.cover .chip{
+  position:absolute;left:12px;top:12px;background:rgba(18,22,28,.78);color:#fff;font-size:11.5px;
+  padding:3px 10px;border-radius:20px;letter-spacing:1px;backdrop-filter:blur(4px);
+}
+.cover .dur{
+  position:absolute;right:12px;bottom:12px;background:rgba(18,22,28,.8);color:#fff;font-size:11.5px;
+  padding:2px 8px;border-radius:6px;letter-spacing:.5px;
+}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(8,11,15,.38))}
+.vcard .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.vcard .body h3{font-size:17px;letter-spacing:.3px}
+.vcard .desc{font-size:13.5px;color:#5d6875;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.meta{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--steel);margin-top:auto;flex-wrap:wrap}
+.meta .av{width:26px;height:26px;border-radius:50%;background:var(--cool);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:700;flex:none}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tags span{font-size:11.5px;color:var(--cool);background:#eaf0f6;padding:2px 9px;border-radius:20px}
+.card-actions{display:flex;gap:14px;align-items:center;border-top:1px dashed var(--line);padding-top:11px;font-size:12.5px;color:var(--steel)}
+.card-actions button{display:inline-flex;align-items:center;gap:5px;transition:.2s;color:var(--steel)}
+.card-actions button:hover{color:var(--accent)}
+.card-actions button.on{color:var(--accent);font-weight:700}
+.card-actions button.on .ic{transform:scale(1.15)}
+.ic{font-size:14px;transition:.2s}
+.vcard.big .body h3{font-size:20px}
+.vcard.big .desc{-webkit-line-clamp:3}
+.focus-side{display:grid;gap:22px;grid-template-rows:repeat(2,1fr)}
+.mini-row{display:flex;gap:14px;padding:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);transition:.22s}
+.mini-row:hover{box-shadow:var(--shadow);transform:translateX(3px)}
+.mini-row .thumb{width:118px;aspect-ratio:16/9;border-radius:9px;overflow:hidden;flex:none;position:relative;background:#0e1218}
+.mini-row .thumb img{width:100%;height:100%;object-fit:cover}
+.mini-row .thumb i{position:absolute;inset:0;margin:auto;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.9);display:grid;place-items:center;font-size:10px;padding-left:2px;color:var(--ink)}
+.mini-row h4{font-size:14.5px;line-height:1.45}
+.mini-row p{font-size:12px;color:var(--steel);margin-top:4px}
+
+/* 专题 */
+.topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.topic{
+  border-radius:var(--radius);overflow:hidden;position:relative;min-height:250px;display:flex;
+  align-items:flex-end;color:#fff;box-shadow:var(--shadow);
+}
+.topic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.topic .mask{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,18,.05) 30%,rgba(8,12,18,.85))}
+.topic .tx{position:relative;padding:22px}
+.topic .tx .st{font-size:11.5px;letter-spacing:2px;color:var(--accent-2);font-weight:700}
+.topic .tx h3{margin:6px 0 6px;font-size:19px}
+.topic .tx p{font-size:12.5px;color:#d6dde5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.topic .upd{margin-top:10px;font-size:11.5px;color:#a9b5c1;display:flex;gap:8px;align-items:center}
+.topic .upd b{color:#fff;font-weight:600}
+
+/* 视频流 */
+.filter-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.filter-row button{
+  padding:7px 16px;border-radius:20px;border:1px solid var(--line);background:#fff;font-size:13px;
+  color:#46515e;transition:.2s;
+}
+.filter-row button:hover{border-color:var(--steel)}
+.filter-row button.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.flow .vcard[data-flagged="hide"]{display:none}
+
+/* 创作者 */
+.creator-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.creator{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 18px;
+  text-align:center;transition:.25s;position:relative;
+}
+.creator:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#c9d1da}
+.avatar{
+  width:64px;height:64px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;
+  font-size:22px;font-weight:800;color:#fff;letter-spacing:1px;
+}
+.creator h3{font-size:16px}
+.creator .field{font-size:12px;color:var(--accent);letter-spacing:1px;margin:4px 0 8px;font-weight:600}
+.creator p{font-size:12.5px;color:#5d6875;min-height:56px}
+.creator .nums{display:flex;justify-content:center;gap:16px;margin-top:8px;font-size:12px;color:var(--steel)}
+.creator .nums b{color:var(--ink)}
+.creator .lnk{margin-top:12px;display:inline-block;font-size:12.5px;color:var(--cool);border-bottom:1px solid #cdd6df;padding-bottom:1px}
+.creator .lnk:hover{color:var(--accent);border-color:var(--accent)}
+
+/* 作品墙 */
+.wall{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:150px;gap:14px}
+.wall figure{position:relative;border-radius:12px;overflow:hidden;background:#0e1218}
+.wall figure img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.wall figure:hover img{transform:scale(1.07)}
+.wall figcaption{
+  position:absolute;inset:auto 0 0 0;padding:10px 12px;font-size:12px;color:#fff;
+  background:linear-gradient(180deg,transparent,rgba(8,11,15,.82));letter-spacing:.3px;
+}
+.wall .w3{grid-column:span 3;grid-row:span 2}
+.wall .w2{grid-column:span 2;grid-row:span 1}
+.wall .w2t{grid-column:span 2;grid-row:span 2}
+
+/* 故事随笔 */
+.story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.story{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:22px}
+.story h3{font-size:16px;margin-bottom:8px}
+.story p{font-size:13.5px;color:#545f6c}
+.story .who{font-size:12px;color:var(--steel);margin-top:12px}
+
+/* 评论 */
+.comments{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.cmt{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;position:relative}
+.cmt::before{content:"“";position:absolute;right:18px;top:6px;font-size:44px;color:#e8edf2;font-family:Georgia,serif}
+.cmt p{font-size:13.5px;color:#404b57}
+.cmt .who{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:12.5px;color:var(--steel)}
+.cmt .who .av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:12px;font-weight:700}
+.cmt .stars{margin-left:auto;color:var(--accent-2);letter-spacing:1px;font-size:12px}
+
+/* 动态 */
+.news-list{display:grid;gap:0;border-top:1px solid var(--line)}
+.news-item{display:grid;grid-template-columns:110px 1fr auto;gap:18px;align-items:center;padding:18px 4px;border-bottom:1px solid var(--line);transition:.2s}
+.news-item:hover{background:#fff;padding-left:14px}
+.news-item time{font-size:12.5px;color:var(--steel);letter-spacing:.5px}
+.news-item h3{font-size:15px;font-weight:600}
+.news-item p{font-size:12.5px;color:var(--steel);margin-top:2px}
+.news-item .badge{font-size:11.5px;color:var(--accent);border:1px solid rgba(255,90,31,.4);border-radius:20px;padding:2px 10px}
+
+/* FAQ */
+.faq{display:grid;gap:12px}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:0 18px;overflow:hidden}
+details summary{
+  list-style:none;cursor:pointer;padding:16px 0;font-size:15px;font-weight:600;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";color:var(--accent);font-size:20px;font-weight:400;transition:.2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{font-size:13.5px;color:#535e6b;padding:0 0 16px}
+
+/* 联系 */
+.contact-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
+.contact-card{background:var(--ink);color:#dfe6ee;border-radius:20px;padding:34px;position:relative;overflow:hidden}
+.contact-card::after{content:"";position:absolute;right:-50px;top:-50px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(255,90,31,.4),transparent 70%)}
+.contact-card h3{color:#fff;font-size:21px;margin-bottom:10px}
+.contact-card p{font-size:13.5px;color:#aeb9c5}
+.contact-list{margin-top:20px;display:grid;gap:12px;font-size:13.5px}
+.contact-list div{display:flex;gap:10px}
+.contact-list b{color:var(--accent-2);font-weight:600;min-width:70px}
+.contact-card .btn{margin-top:22px}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow)}
+.form-card h3{font-size:17px;margin-bottom:14px}
+.form-card label{font-size:12.5px;color:var(--steel);display:block;margin:12px 0 5px}
+.form-card input,.form-card textarea{
+  width:100%;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px;
+  font-family:inherit;outline:none;transition:.2s;background:#fafbfc;
+}
+.form-card input:focus,.form-card textarea:focus{border-color:var(--accent);background:#fff}
+.form-card textarea{resize:vertical;min-height:82px}
+.form-card .btn{margin-top:16px;width:100%;justify-content:center}
+.form-msg{font-size:12.5px;color:#16a34a;margin-top:10px;display:none}
+
+/* 页脚 */
+footer.site{background:#0f1319;color:#9fabb8;padding:56px 0 28px;margin-top:10px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:34px}
+.foot-brand .logo{color:#fff;margin-bottom:14px}
+.foot-brand p{font-size:13px;color:#8b97a4;max-width:320px}
+.foot-brand .tagline{margin-top:14px;font-size:12px;color:#6f7b89;letter-spacing:1px}
+.foot-col h4{color:#fff;font-size:14px;margin-bottom:14px;letter-spacing:1px}
+.foot-col a,.foot-col p{display:block;font-size:13px;color:#94a0ad;margin-bottom:9px;transition:.2s}
+.foot-col a:hover{color:var(--accent-2)}
+.foot-bottom{
+  margin-top:40px;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#77828f;
+}
+
+/* 回到顶部 & Toast */
+#toTop{
+  position:fixed;right:22px;bottom:26px;width:46px;height:46px;border-radius:50%;background:var(--ink);
+  color:#fff;display:grid;place-items:center;font-size:17px;box-shadow:0 10px 24px rgba(0,0,0,.25);
+  opacity:0;pointer-events:none;transition:.3s;z-index:80;
+}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--accent)}
+#toast{
+  position:fixed;left:50%;bottom:40px;transform:translate(-50%,20px);background:var(--ink);color:#fff;
+  padding:11px 22px;border-radius:30px;font-size:13.5px;box-shadow:0 12px 30px rgba(0,0,0,.28);
+  opacity:0;pointer-events:none;transition:.3s;z-index:120;letter-spacing:.5px;
+}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* 弹窗 */
+.modal{
+  position:fixed;inset:0;background:rgba(10,14,20,.55);backdrop-filter:blur(4px);
+  display:none;place-items:center;z-index:130;padding:20px;
+}
+.modal.show{display:grid}
+.modal-box{background:#fff;border-radius:18px;max-width:520px;width:100%;padding:28px;position:relative;box-shadow:0 30px 70px rgba(0,0,0,.3)}
+.modal-box h3{font-size:19px;margin-bottom:10px}
+.modal-box p{font-size:13.5px;color:#525d6a}
+.modal-box .close{position:absolute;right:14px;top:12px;width:32px;height:32px;border-radius:50%;background:#f1f4f7;display:grid;place-items:center;font-size:15px}
+.modal-box .close:hover{background:var(--accent);color:#fff}
+.modal-box .btn{margin-top:18px}
+.share-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.share-row button{border:1px solid var(--line);border-radius:11px;padding:13px 4px;font-size:12.5px;background:#fafbfc;transition:.2s}
+.share-row button:hover{border-color:var(--accent);color:var(--accent);background:#fff}
+.author-modal .avatar{margin:0 0 12px}
+.author-modal .field{margin:6px 0 10px}
+
+@media (max-width:1020px){
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .hero-visual{max-width:620px}
+  .focus-grid{grid-template-columns:1fr}
+  .topic-grid,.flow,.creator-grid,.story-grid,.comments{grid-template-columns:repeat(2,1fr)}
+  .wall{grid-template-columns:repeat(4,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .contact-wrap{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  nav.main{
+    display:none;position:absolute;left:0;right:0;top:100%;background:#fff;flex-direction:column;
+    padding:12px 18px 20px;border-bottom:1px solid var(--line);box-shadow:0 20px 30px rgba(0,0,0,.08);
+  }
+  nav.main.open{display:flex}
+  nav.main a{padding:11px 6px;border-bottom:1px solid #f0f3f6}
+  .burger{display:grid}
+  .nav-inner{gap:14px;height:66px;position:relative}
+  .nav-tools{margin-left:auto}
+  .search input{width:150px}
+  .search input:focus{width:170px}
+  .sec{padding:52px 0;scroll-margin-top:112px}
+  .flow,.creator-grid,.story-grid,.comments,.topic-grid{grid-template-columns:1fr}
+  .wall{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px}
+  .wall .w3{grid-column:span 2}
+  .wall .w2t{grid-column:span 2}
+  .notice-bar .container{height:auto;padding:8px 22px;flex-wrap:wrap;gap:8px}
+  .notice-track{white-space:normal;font-size:12px}
+  .stats{gap:22px}
+  .news-item{grid-template-columns:1fr;gap:6px}
+  .hero-badge{left:8px}
+  .hero-tape{display:none}
+  .foot-grid{grid-template-columns:1fr}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body id="top">
+
+<div class="sticky-wrap">
+  <div class="notice-bar">
+    <div class="container">
+      <span class="tag">官方发布</span>
+      <div class="notice-track">新增《涡轮之下》第 6 集 · <b>“俄式重卡动力拆解”</b>专题页上线 · 2025 动力影像创作挑战赛报名通道开启</div>
+      <a href="#news">查看全部动态</a>
+    </div>
+  </div>
+  <header class="site">
+    <div class="container nav-inner">
+      <a class="logo" href="#top">
+        <span class="mark">Р</span>
+        <span>俄罗斯引擎<small>RUSSIAN ENGINE</small></span>
+      </a>
+      <nav class="main" id="mainNav">
+        <a href="#hero">首页</a>
+        <a href="#focus">视频焦点</a>
+        <a href="#topics">专题</a>
+        <a href="#flow">内容生态</a>
+        <a href="#creators">创作者</a>
+        <a href="#news">企业动态</a>
+        <a href="#faq">帮助</a>
+        <a href="#contact">联系</a>
+      </nav>
+      <div class="nav-tools">
+        <div class="search">
+          <input id="searchInput" type="search" placeholder="搜索机型 / 技术 / 创作者" aria-label="站内搜索">
+          <button id="searchBtn" aria-label="搜索">⌕</button>
+          <div class="search-hint" id="searchHint"></div>
+        </div>
+        <a class="btn btn-primary" href="#contact" style="display:none" id="desktopCta">投稿加入</a>
+        <button class="burger" id="burger" aria-label="展开导航"><span></span></button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- 首屏 -->
+<section class="hero" id="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">官方网站 · 动力影像</span>
+      <h1>俄罗斯引擎</h1>
+      <p class="lead">以镜头记录动力，以技术对话时代。这里是发动机技术、机械工业与动力文化的原创内容社区。</p>
+      <p class="intro">作为深耕动力垂直领域的视频品牌官网，我们持续运营一支由工程师、纪录片导演与机械摄影师组成的原创团队，围绕柴油机组、涡轮增压、重型机械与工业美学展开长期拍摄。平台坚持正版高清与专业审校，为行业用户和普通观众提供值得信赖的内容生态，让每一次点火、每一声低频轰鸣都被真实记录。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#focus">观看焦点内容</a>
+        <a class="btn btn-ghost" href="#creators">认识创作者</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>1,240+</b><span>原创视频作品</span></div>
+        <div class="stat"><b>86 位</b><span>认证创作者</span></div>
+        <div class="stat"><b>9 年</b><span>持续运营</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <span class="hero-tape">ENGINE <i>LIVE</i></span>
+      <div class="frame">
+        <img alt="俄罗斯引擎品牌主视觉：工业车间内点亮的涡轮增压器特写" width="640" height="420" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 420'><defs><linearGradient id='g1' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%232b4a68'/><stop offset='1' stop-color='%230f1319'/></linearGradient><radialGradient id='g2' cx='.62' cy='.42' r='.45'><stop offset='0' stop-color='%23ff5a1f' stop-opacity='.85'/><stop offset='1' stop-color='%23ff5a1f' stop-opacity='0'/></radialGradient></defs><rect width='640' height='420' fill='url(%23g1)'/><rect width='640' height='420' fill='url(%23g2)'/><g stroke='%23a9c4dd' stroke-opacity='.22' fill='none'><circle cx='400' cy='190' r='98'/><circle cx='400' cy='190' r='70'/><circle cx='400' cy='190' r='42'/><circle cx='400' cy='190' r='16'/></g><g fill='%23ffb020' opacity='.9'><path d='M400 78 L414 128 L400 118 L386 128 Z'/><path d='M400 302 L414 252 L400 262 L386 252 Z'/><path d='M288 190 L338 176 L328 190 L338 204 Z'/><path d='M512 190 L462 176 L472 190 L462 204 Z'/></g><g stroke='%23ffffff' stroke-opacity='.14'><line x1='0' y1='330' x2='640' y2='330'/><line x1='0' y1='352' x2='640' y2='352'/><line x1='0' y1='374' x2='640' y2='374'/></g><text x='40' y='62' fill='%23ffffff' font-family='sans-serif' font-size='19' font-weight='700' letter-spacing='5'>ENGINE</text><text x='40' y='86' fill='%239fb4c8' font-family='sans-serif' font-size='11' letter-spacing='3'>TURBO · DIESEL · MOTION</text></svg>">
+      </div>
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <div><b>本周热播</b><span>《涡轮之下》第 6 集已上线</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 焦点视频 -->
+<section class="sec" id="focus">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">视频焦点</span>
+        <h2>本期主推 · 动力现场</h2>
+      </div>
+      <p>由官方编辑部与一线工程师共同甄选的精品内容，覆盖拆解、实测与人物访谈，支持高清播放与收藏。</p>
+    </div>
+    <div class="focus-grid">
+      <article class="vcard big" data-key="拆解 涡轮 柴油 重卡">
+        <div class="cover">
+          <img alt="重卡柴油发动机涡轮增压系统拆解现场" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'><defs><linearGradient id='a' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23343f4c'/><stop offset='1' stop-color='%23151b22'/></linearGradient></defs><rect width='800' height='450' fill='url(%23a)'/><g fill='none' stroke='%235b7a99' stroke-width='3' opacity='.75'><rect x='170' y='160' width='210' height='130' rx='10'/><rect x='400' y='140' width='90' height='90' rx='10'/><circle cx='445' cy='185' r='26'/><line x1='380' y1='225' x2='400' y2='225'/><line x1='170' y1='200' x2='110' y2='200'/><line x1='110' y1='170' x2='110' y2='260'/></g><g fill='%23ff5a1f' opacity='.9'><rect x='520' y='150' width='8' height='150'/><rect x='545' y='190' width='8' height='110'/></g><g stroke='%23ffb020' stroke-width='2' opacity='.55'><line x1='140' y1='330' x2='660' y2='330'/><line x1='140' y1='352' x2='660' y2='352'/></g><text x='40' y='60' fill='%23ffffff' font-family='sans-serif' font-size='15' letter-spacing='3'>EP.06 / DISASSEMBLY</text></svg>">
+          <span class="chip">原创高清</span>
+          <span class="dur">18:42</span>
+          <span class="play">▶</span>
+        </div>
+        <div class="body">
+          <h3>《涡轮之下》第 6 集：一台重卡柴油机的完整拆解</h3>
+          <p class="desc">从缸体到增压器，工程师用三个小时讲清 12 升排量柴油机的每一处结构，并现场演示了喷油正时对油耗的实际影响。这是本季技术含金量最高的一期。</p>
+          <div class="tags"><span>深度拆解</span><span>柴油动力</span><span>工程实测</span></div>
+          <div class="meta"><span class="av" style="background:#2b4a68">安</span> 安德烈 · 动力实验室 <span>· 2 小时前</span><span>· 4.8 万次播放</span></div>
+          <div class="card-actions">
+            <button class="like" data-count="4836"><span class="ic">♡</span><span class="num">4,836</span> 点赞</button>
+            <button class="fav"><span class="ic">☆</span> 收藏</button>
+            <button class="share"><span class="ic">↗</span> 分享</button>
+          </div>
+        </div>
+      </article>
+      <div class="focus-side">
+        <article class="mini-row" data-key="工业 影像 美学 工厂">
+          <div class="thumb"><img alt="夜色中的重型机械工厂全景" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'><rect width='320' height='180' fill='%230f1a24'/><g fill='%232b4a68'><rect x='20' y='90' width='70' height='70'/><rect x='100' y='70' width='56' height='90'/><rect x='170' y='100' width='90' height='60'/></g><g fill='%23ffb020' opacity='.85'><rect x='34' y='106' width='12' height='10'/><rect x='56' y='106' width='12' height='10'/><rect x='114' y='86' width='10' height='10'/><rect x='134' y='86' width='10' height='10'/><rect x='186' y='116' width='10' height='10'/></g><circle cx='278' cy='42' r='16' fill='%23ff5a1f' opacity='.5'/><text x='16' y='30' fill='%23ffffff' font-family='sans-serif' font-size='11' letter-spacing='2'>INDUSTRIAL</text></svg>"><i>▶</i></div>
+          <div>
+            <h4>工业美学：把重型机械拍成电影</h4>
+            <p>12:05 · 影像 · 1.9 万播放</p>
+          </div>
+        </article>
+        <article class="mini-row" data-key="访谈 工程师 人物">
+          <div class="thumb"><img alt="工程师人物访谈录制现场" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'><rect width='320' height='180' fill='%23222b34'/><circle cx='160' cy='78' r='34' fill='%235b6b7c'/><path d='M100 180 Q160 118 220 180 Z' fill='%235b6b7c'/><rect x='0' y='0' width='320' height='180' fill='none' stroke='%23ff5a1f' stroke-width='3' opacity='.5'/><text x='16' y='30' fill='%23ffb020' font-family='sans-serif' font-size='11' letter-spacing='2'>INTERVIEW</text></svg>"><i>▶</i></div>
+          <div>
+            <h4>对话总工程师：四十年只做一件事</h4>
+            <p>24:30 · 人物 · 3.2 万播放</p>
+          </div>
+        </article>
+        <article class="mini-row" data-key="冬季 实测 低温 启动">
+          <div class="thumb"><img alt="零下三十度低温启动实拍场景" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'><rect width='320' height='180' fill='%23cfe0ee'/><path d='M0 130 L70 96 L140 132 L210 100 L320 138 L320 180 L0 180 Z' fill='%23ffffff'/><g stroke='%232b4a68' stroke-width='2' opacity='.6'><line x1='30' y1='40' x2='90' y2='40'/><line x1='60' y1='20' x2='60' y2='64'/><line x1='240' y1='50' x2='300' y2='50'/><line x1='270' y1='26' x2='270' y2='78'/></g><text x='16' y='30' fill='%232b4a68' font-family='sans-serif' font-size='11' letter-spacing='2'>-30℃ TEST</text></svg>"><i>▶</i></div>
+          <div>
+            <h4>零下三十度：低温启动极限实测</h4>
+            <p>09:18 · 实测 · 2.6 万播放</p>
+          </div>
+        </article>
+        <article class="mini-row" data-key="历史 品牌 故事 工厂">
+          <div class="thumb"><img alt="老式发动机工厂历史影像" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'><rect width='320' height='180' fill='%23463a2e'/><g stroke='%23d9c39a' stroke-width='2' opacity='.7' fill='none'><circle cx='120' cy='90' r='40'/><circle cx='120' cy='90' r='12'/><line x1='120' y1='50' x2='120' y2='130'/><line x1='80' y1='90' x2='160' y2='90'/></g><g fill='%23d9c39a' opacity='.4'><rect x='210' y='60' width='80' height='12'/><rect x='210' y='86' width='80' height='12'/><rect x='210' y='112' width='54' height='12'/></g><text x='16' y='30' fill='%23f0e2c8' font-family='sans-serif' font-size='11' letter-spacing='2'>ARCHIVE</text></svg>"><i>▶</i></div>
+          <div>
+            <h4>从档案里找出的第一台样机</h4>
+            <p>15:52 · 品牌故事 · 1.4 万播放</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 专题 -->
+<section class="sec alt" id="topics">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">专题企划</span>
+        <h2>长期跟踪的四个方向</h2>
+      </div>
+      <p>每个专题由编辑团队与外部顾问共同维护，按季度更新，已形成可检索的内容档案。</p>
+    </div>
+    <div class="topic-grid">
+      <a class="topic" href="#flow">
+        <img alt="涡轮增压技术专题封面" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 300'><rect width='480' height='300' fill='%231b2430'/><g fill='none' stroke='%23ff5a1f' stroke-width='3' opacity='.85'><circle cx='240' cy='140' r='70'/><circle cx='240' cy='140' r='44'/><path d='M240 70 L250 108 L240 100 L230 108 Z'/></g><g stroke='%235b7a99' stroke-opacity='.6'><line x1='40' y1='240' x2='440' y2='240'/><line x1='40' y1='262' x2='440' y2='262'/></g></svg>">
+        <span class="mask"></span>
+        <span class="tx">
+          <span class="st">TECH</span>
+          <h3>涡轮增压进化史</h3>
+          <p>从机械增压到可变截面，八集梳理增压技术路线与工程取舍。</p>
+          <span class="upd">已更新 <b>8</b> 集 · 季度更新</span>
+        </span>
+      </a>
+      <a class="topic" href="#flow">
+        <img alt="重型机械工业摄影专题封面" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 300'><rect width='480' height='300' fill='%232b4a68'/><g fill='%23121a22'><rect x='60' y='150' width='120' height='110'/><rect x='200' y='120' width='85' height='140'/><rect x='300' y='170' width='120' height='90'/></g><g fill='%23ffb020' opacity='.9'><rect x='78' y='170' width='16' height='14'/><rect x='108' y='170' width='16' height='14'/><rect x='218' y='142' width='14' height='14'/><rect x='244' y='142' width='14' height='14'/></g><circle cx='120' cy='70' r='30' fill='%23ff5a1f' opacity='.35'/></svg>">
+        <span class="mask"></span>
+        <span class="tx">
+          <span class="st">VISUAL</span>
+          <h3>钢铁与光</h3>
+          <p>工业摄影企划，六位摄影师用镜头重新定义重型机械的线条感。</p>
+          <span class="upd">已更新 <b>5</b> 期 · 每月更新</span>
+        </span>
+      </a>
+      <a class="topic" href="#flow">
+        <img alt="冬季运输动力挑战专题封面" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 300'><rect width='480' height='300' fill='%23dbe8f2'/><path d='M0 200 L120 150 L240 205 L360 160 L480 210 L480 300 L0 300 Z' fill='%23ffffff'/><g stroke='%232b4a68' stroke-width='3' opacity='.7'><line x1='80' y1='60' x2='80' y2='120'/><line x1='50' y1='90' x2='110' y2='90'/><line x1='400' y1='50' x2='400' y2='110'/><line x1='370' y1='80' x2='430' y2='80'/></g><text x='24' y='40' fill='%232b4a68' font-family='sans-serif' font-size='13' letter-spacing='3'>WINTER</text></svg>">
+        <span class="mask"></span>
+        <span class="tx">
+          <span class="st">FIELD</span>
+          <h3>极寒动力</h3>
+          <p>跟随测试车队穿越西伯利亚，记录低温环境下的动力表现。</p>
+          <span class="upd">已更新 <b>4</b> 集 · 冬季特别篇</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 视频流 -->
+<section class="sec" id="flow">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">内容生态</span>
+        <h2>热门视频流</h2>
+      </div>
+      <p>按主题筛选内容，所有作品均为官方发布或经认证创作者上传，支持标签筛选与收藏。</p>
+    </div>
+    <div class="filter-row" id="filterRow">
+      <button class="active" data-f="all">全部</button>
+      <button data-f="拆解">拆解</button>
+      <button data-f="实测">实测</button>
+      <button data-f="访谈">访谈</button>
+      <button data-f="影像">影像</button>
+      <button data-f="故事">故事</button>
+    </div>
+    <div class="flow" id="flowGrid">
+
+      <article class="vcard" data-tag="实测" data-key="低温 启动 冬季 柴油">
+        <div class="cover">
+          <img alt="柴油机组低温启动实测视频封面" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'><rect width='400' height='225' fill='%23dce8f3'/><path d='M0 160 L100 128 L200 162 L300 132 L400 164 L400 225 L0 225 Z' fill='%23ffffff'/><rect x='150' y='96' width='100' height='54' rx='6' fill='%232b4a68'/><circle cx='176' cy='150' r='13' fill='%2312181f'/><circle cx='224' cy='150' r='13' fill='%2312181f'/><text x='16' y='30' fill='%232b4a68' font-family='sans-serif' font-size='12' letter-spacing='2'>-30℃</text></svg>">
+          <span class="chip">实测</span><span class="dur">11:07</span><span class="play">▶</span>
+        </div>
+        <div class="body">
+          <h3>低温启动全流程记录：预热塞到底多重要</h3>
+          <p class="desc">同一台机组，两种不同的预热策略，油耗与启动时间差异明显。</p>
+          <div class="tags"><span>冬季用车</span><span>启动系统</span></div>
+          <div class="meta"><span class="av" style="background:#2b4a68">斯</span> 斯维特影像 · 3.1 万播放</div>
+          <div class="card-actions">
+            <button class="like" data-count="1520"><span class="ic">♡</span><span class="num">1,520</span> 点赞</button>
+            <button class="fav"><span class="ic">☆</span> 收藏</button>
+            <button class="share"><span class="ic">↗</span> 分享</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="vcard" data-tag="拆解" data-key="喷油 系统 结构 教程">
+        <div class="cover">
+          <img alt="高压共轨喷油系统内部结构拆解封面" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'><rect width='400' height='225' fill='%23202a35'/><g stroke='%237ba7cc' stroke-width='3' fill='none' opacity='.9'><rect x='60' y='90' width='280' height='40' rx='20'/><circle cx='110' cy='110' r='9'/><circle cx='170' cy='110' r='9'/><circle cx='230' cy='110' r='9'/><circle cx='290' cy='110' r='9'/></g><g fill='%23ff5a1f' opacity='.9'><rect x='150' y='150' width='8' height='40'/><rect x='230' y='150' width='8' height='40'/></g><text x='16' y='30' fill='%23ffffff' font-family='sans-serif' font-size='12' letter-spacing='2'>INJECTION</text></svg>">
+          <span class="chip">深度拆解</span><span class="dur">21:36</span><span class="play">▶</span>
+        </div>
+        <div class="body">
+          <h3>高压共轨系统拆开看：一根油轨里的精度</h3>
+          <p class="desc">把喷油压力、雾化与排放的关系讲透，附装配顺序要点。</p>
+          <div class="tags"><span>共轨</span><span>燃油系统</span></div>
+          <div class="meta"><span class="av" style="background:#5b6b7c">安</span> 安德烈 · 动力实验室 · 4.2 万播放</div>
+          <div class="card-actions">
+            <button class="like" data-count="3902"><span class="ic">♡</span><span class="num">3,902</span> 点赞</button>
+            <button class="fav"><span class="ic">☆</span> 收藏</button>
+            <button class="share"><span class="ic">↗</span> 分享</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="vcard" data-tag="访谈" data-key="车队 机械师 人物 访谈">
+        <div class="cover">
+          <img alt="长年跑干线运输的机械师访谈封面" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'><rect width='400' height='225' fill='%233a2f26'/><circle cx='200' cy='92' r='36' fill='%23c9a06a'/><path d='M132 225 Q200 148 268 225 Z' fill='%23c9a06a'/><g stroke='%23f0d9b5' stroke-opacity='.4'><line x1='30' y1='40' x2='120' y2='40'/><line x1='280' y1='40' x2='370' y2='40'/></g><text x='16' y='30' fill='%23f0d9b5' font-family='sans-serif' font-size='12' letter-spacing='2'>STORY</text></svg>">
+          <span class="chip">人物访谈</span><span class="dur">26:14</span><span class="play">▶</span>
+        </div>
+        <div class="body">
+          <h3>跑了二十三年的机械师：发动机的声音会说话</h3>
+          <p class="desc">从听声辨障到带徒弟，他把经验变成了一套可传授的方法。</p>
+          <div class="tags"><span>人物</span><span>经验分享</span></div>
+          <div class="meta"><span class="av" style="background:#7a5c3e">卡</span> 卡佳记录 · 2.4 万播放</div>
+          <div class="card-actions">
+            <button class="like" data-count="2210"><span class="ic">♡</span><span class="num">2,210</span> 点赞</button>
+            <button class="fav"><span class="ic">☆</span> 收藏</button>
+            <button class="share"><span class="ic">↗</span> 分享</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="vcard" data-tag="影像" data-key="工业 影像 拍摄 幕后">
+        <div class="cover">
+          <img alt="工业影像拍摄幕后灯光布置封面" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'><rect width='400' height='225' fill='%23121a22'/><g fill='%23ffb020' opacity='.85'><circle cx='120' cy='80' r='22'/><circle cx='290' cy='70' r='14'/></g><g stroke='%23ffb020' stroke-opacity='.35'><line x1='120' y1='102' x2='200' y2='225'/><line x1='290' y1='84' x2='240' y2='225'/></g><rect x='150' y='140' width='110' height='85' fill='%232b4a68'/><text x='16' y='30' fill='%239fb4c8' font-family='sans-serif' font-size='12' letter-spacing='2'>BEHIND</text></svg>">
+          <span class="chip">创作幕后</span><span class="dur">13:40</span><span class="play">▶</span>
+        </div>
+        <div class="body">
+          <h3>在轰鸣里布光：工业影像拍摄的五个现场技巧</h3>
+          <p class="desc">强振动、高粉尘、低照度，三件难事如何逐一解决。</p>
+          <div class="tags"><span>摄影</span><span>幕后</span></div>
+          <div class="meta"><span class="av" style="background:#2b4a68">维</span> 维克多视觉 · 1.8 万播放</div>
+          <div class="card-actions">
+            <button class="like" data-count="1174"><span class="ic">♡</span><span class="num">1,174</span> 点赞</button>
+            <button class="fav"><span class="ic">☆</span> 收藏</button>
+            <button class="share"><span class="ic">↗</span> 分享</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="vcard" data-tag="故事" data-key="工厂 历史 品牌 故事">
+        <div class="cover">
+          <img alt="老工厂车间与第一代样机的故事封面" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'><rect width='400' height='225' fill='%23453a2e'/><g stroke='%23d9c39a' stroke-width='3' fill='none' opacity='.8'><rect x='60' y='110' width='90' height='70'/><circle cx='105' cy='146' r='20'/></g><g fill='%23d9c39a' opacity='.45'><rect x='200' y='70' width='140' height='10'/><rect x='200' y='94' width='140' height='10'/><rect x='200' y='118' width='96' height='10'/></g><text x='16' y='30' fill='%23f0e2c8' font-family='sans-serif' font-size='12' letter-spacing='2'>1962</text></svg>">
+          <span class="chip">品牌故事</span><span class="dur">17:02</span><span class="play">▶</span>
+        </div>
+        <div class="body">
+          <h3>1962 年的图纸：一间老厂的起点</h3>
+          <p class="desc">从手绘图纸到批量生产线，一段被重新整理的档案影像。</p>
+          <div class="tags"><span>历史</span><span>档案</span></div>
+          <div class="meta"><span class="av" style="background:#453a2e">编</span> 官方编辑部 · 3.7 万播放</div>
+          <div class="card-actions">
+            <button class="like" data-count="3058"><span class="ic">♡</span><span class="num">3,058</span> 点赞</button>
+            <button class="fav"><span class="ic">☆</span> 收藏</button>
+            <button class="share"><span class="ic">↗</span> 分享</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="vcard" data-tag="实测" data-key="油耗 长测 干线 运输">
+        <div class="cover">
+          <img alt="长途干线运输油耗长测实拍封面" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'><rect width='400' height='225' fill='%231c2a38'/><path d='M0 170 L400 170 L400 225 L0 225 Z' fill='%23272f38'/><g stroke='%23ffb020' stroke-width='3' opacity='.9'><line x1='20' y1='198' x2='70' y2='198'/><line x1='110' y1='198' x2='160' y2='198'/><line x1='200' y1='198' x2='250' y2='198'/></g><g fill='%23ff5a1f'><rect x='250' y='120' width='90' height='50' rx='6'/><circle cx='272' cy='172' r='10' fill='%2312181f'/><circle cx='320' cy='172' r='10' fill='%2312181f'/></g><text x='16' y='30' fill='%23ffffff' font-family='sans-serif' font-size='12' letter-spacing='2'>HIGHWAY</text></svg>">
+          <span class="chip">实测</span><span class="dur">14:55</span><span class="play">▶</span>
+        </div>
+        <div class="body">
+          <h3>两千公里干线长测：百公里油耗的真实答案</h3>
+          <p class="desc">同一路线、两种驾驶习惯，数据完整公开，不修饰不删减。</p>
+          <div class="tags"><span>长测</span><span>油耗</span></div>
+          <div class="meta"><span class="av" style="background:#1c2a38">测</span> 实测小组 · 5.6 万播放</div>
+          <div class="card-actions">
+            <button class="like" data-count="5104"><span class="ic">♡</span><span class="num">5,104</span> 点赞</button>
+            <button class="fav"><span class="ic">☆</span> 收藏</button>
+            <button class="share"><span class="ic">↗</span> 分享</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 创作者 -->
+<section class="sec alt" id="creators">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">创作者矩阵</span>
+        <h2>让专业的人讲专业的事</h2>
+      </div>
+      <p>平台持续运营创作者认证体系，从工程背景、内容品质与社区口碑三个维度综合评定。</p>
+    </div>
+    <div class="creator-grid">
+
+      <div class="creator">
+        <div class="avatar" style="background:#2b4a68">安</div>
+        <h3>安德烈 · 动力实验室</h3>
+        <div class="field">拆解 / 技术科普</div>
+        <p>机械工程硕士，八年一线维修经验，擅长把复杂结构讲成常识。</p>
+        <div class="nums"><span><b>126</b> 作品</span><span><b>18.4万</b> 粉丝</span></div>
+        <button class="lnk author-btn" data-a="0">查看档案</button>
+      </div>
+
+      <div class="creator">
+        <div class="avatar" style="background:#7a5c3e">卡</div>
+        <h3>卡佳记录</h3>
+        <div class="field">人物访谈</div>
+        <p>纪录片导演出身，长期跟踪运输与制造业一线人物，镜头克制而温暖。</p>
+        <div class="nums"><span><b>74</b> 作品</span><span><b>11.2万</b> 粉丝</span></div>
+        <button class="lnk author-btn" data-a="1">查看档案</button>
+      </div>
+
+      <div class="creator">
+        <div class="avatar" style="background:#2f5d4a">维</div>
+        <h3>维克多视觉</h3>
+        <div class="field">工业影像</div>
+        <p>专注重型机械摄影，作品多次入选工业题材影像展，强调线条与光。</p>
+        <div class="nums"><span><b>98</b> 作品</span><span><b>9.8万</b> 粉丝</span></div>
+        <button class="lnk author-btn" data-a="2">查看档案</button>
+      </div>
+
+      <div class="creator">
+        <div class="avatar" style="background:#8a3d2e">斯</div>
+        <h3>斯维特影像</h3>
+        <div class="field">冬季实测</div>
+        <p>常驻高纬度地区，记录极寒环境下的设备表现，数据完整可查。</p>
+        <div class="nums"><span><b>61</b> 作品</span><span><b>7.5万</b> 粉丝</span></div>
+        <button class="lnk author-btn" data-a="3">查看档案</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 作品墙 -->
+<section class="sec" id="wall">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">影像墙</span>
+        <h2>本周社区精选画面</h2>
+      </div>
+      <p>来自创作者与社区成员的真实拍摄，尺寸不一，题材各异，共同构成动力文化的样子。</p>
+    </div>
+    <div class="wall">
+      <figure class="w3">
+        <img alt="清晨车间里正在组装的柴油机主体" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'><rect width='600' height='400' fill='%23222c37'/><g fill='%233b4a59'><rect x='90' y='180' width='300' height='150' rx='10'/><rect x='130' y='120' width='90' height='80' rx='8'/></g><g fill='%23ffb020' opacity='.9'><circle cx='150' cy='230' r='12'/><circle cx='210' cy='230' r='12'/><circle cx='270' cy='230' r='12'/></g><g stroke='%23ff5a1f' stroke-width='3' opacity='.6'><line x1='430' y1='120' x2='430' y2='340'/><line x1='470' y1='160' x2='470' y2='340'/></g></svg>">
+        <figcaption>清晨六点的总装线</figcaption>
+      </figure>
+      <figure class="w2">
+        <img alt="涡轮叶片近景微距特写" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><rect width='400' height='200' fill='%230f1620'/><g fill='none' stroke='%237ba7cc' stroke-width='3'><circle cx='200' cy='100' r='60'/><circle cx='200' cy='100' r='36'/></g><g fill='%23ff5a1f' opacity='.85'><path d='M200 40 L212 76 L200 68 L188 76 Z'/></g></svg>">
+        <figcaption>涡轮叶片的光泽</figcaption>
+      </figure>
+      <figure class="w2">
+        <img alt="雪原上行驶的重型运输车" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><rect width='400' height='200' fill='%23dbe8f3'/><path d='M0 140 L120 116 L240 144 L400 120 L400 200 L0 200 Z' fill='%23ffffff'/><g fill='%232b4a68'><rect x='180' y='104' width='80' height='40' rx='5'/><circle cx='200' cy='148' r='9' fill='%2312181f'/><circle cx='240' cy='148' r='9' fill='%2312181f'/></g></svg>">
+        <figcaption>穿越雪原的车队</figcaption>
+      </figure>
+      <figure class="w2t">
+        <img alt="发动机测试台架上密集的仪表盘" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><rect width='400' height='400' fill='%23182029'/><g fill='none' stroke='%23ffb020' stroke-width='3' opacity='.9'><circle cx='120' cy='120' r='48'/><circle cx='290' cy='120' r='48'/><circle cx='120' cy='290' r='48'/><circle cx='290' cy='290' r='48'/></g><g stroke='%23ff5a1f' stroke-width='4'><line x1='120' y1='120' x2='150' y2='96'/><line x1='290' y1='120' x2='268' y2='92'/><line x1='120' y1='290' x2='146' y2='262'/><line x1='290' y1='290' x2='316' y2='268'/></g></svg>">
+        <figcaption>台架测试的四个关键读数</figcaption>
+      </figure>
+      <figure class="w2">
+        <img alt="老厂房砖墙与管道的光影" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><rect width='400' height='200' fill='%233e332a'/><g stroke='%23d9c39a' stroke-opacity='.45' stroke-width='2'><line x1='0' y1='40' x2='400' y2='40'/><line x1='0' y1='80' x2='400' y2='80'/><line x1='0' y1='120' x2='400' y2='120'/><line x1='0' y1='160' x2='400' y2='160'/></g><g fill='%23a98a5e' opacity='.5'><rect x='60' y='0' width='30' height='200'/><rect x='300' y='0' width='24' height='200'/></g></svg>">
+        <figcaption>老厂房里的光</figcaption>
+      </figure>
+      <figure class="w2">
+        <img alt="齿轮传动结构示意图影像" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><rect width='400' height='200' fill='%23151c24'/><g fill='none' stroke='%235b7a99' stroke-width='4'><circle cx='160' cy='100' r='50'/><circle cx='260' cy='100' r='34'/></g><g fill='%23ff5a1f' opacity='.8'><circle cx='160' cy='100' r='9'/><circle cx='260' cy='100' r='7'/></g></svg>">
+        <figcaption>传动结构的秩序感</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 故事随笔 + 评论 -->
+<section class="sec alt" id="stories">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">故事与回响</span>
+        <h2>工作手记与社区声音</h2>
+      </div>
+      <p>镜头之外，编辑与创作者也在写下真实的思考；观众的反馈，则让内容持续变好。</p>
+    </div>
+    <div class="story-grid">
+      <article class="story">
+        <h3>为了三秒钟的声音</h3>
+        <p>拍一台机组启动，我们等了四十分钟。不是设备慢，而是要让车间回响正好落在安静的环境底噪里。最后成片里只有三秒，但那三秒值得。</p>
+        <div class="who">— 编辑手记 · 维克多</div>
+      </article>
+      <article class="story">
+        <h3>把参数讲成故事</h3>
+        <p>扭矩曲线是冷的，但驾驶它的人是热的。这一期我们刻意把数据放在后半段，先让观众听见路、看见手，再回到数字，评论区的讨论明显更长了。</p>
+        <div class="who">— 内容复盘 · 卡佳</div>
+      </article>
+      <article class="story">
+        <h3>一位老机修的建议</h3>
+        <p>他看完拆解视频后寄来一封信，指出我们某处装配顺序写得不够严谨。我们核实后修订了说明，并在片尾加上了勘误——这才是社区该有的样子。</p>
+        <div class="who">— 官方发布 · 编辑部</div>
+      </article>
+    </div>
+    <div class="comments" style="margin-top:34px">
+      <div class="cmt">
+        <p>看完整集拆解，终于把增压器那部分搞明白了。讲得比维修手册清楚得多，收藏了慢慢看。</p>
+        <div class="who"><span class="av" style="background:#2b4a68">机</span> 机械维修老周 <span class="stars">★★★★★</span></div>
+      </div>
+      <div class="cmt">
+        <p>低温启动那期数据很实在，没有夸大。我在北方跑运输，冬天确实就是这样的表现。</p>
+        <div class="who"><span class="av" style="background:#8a3d2e">北</span> 北方干线 <span class="stars">★★★★★</span></div>
+      </div>
+      <div class="cmt">
+        <p>画面质感是真的强，工业场景能拍出这种层次不容易。希望多做几期摄影向的内容。</p>
+        <div class="who"><span class="av" style="background:#2f5d4a">影</span> 胶片盒子 <span class="stars">★★★★☆</span></div>
+      </div>
+      <div class="cmt">
+        <p>提个小建议：拆解环节如果能配上结构分解图就更好了，普通观众会更友好。</p>
+        <div class="who"><span class="av" style="background:#5b6b7c">学</span> 学徒小林 <span class="stars">★★★★☆</span></div>
+      </div>
+      <div class="cmt">
+        <p>从第一期追到现在，能看出团队在技术上越来越扎实，更新也一直很稳，值得信赖。</p>
+        <div class="who"><span class="av" style="background:#7a5c3e">长</span> 长期观众 <span class="stars">★★★★★</span></div>
+      </div>
+      <div class="cmt">
+        <p>访谈那期看完有点感动。四十年只做一件事，这种专注现在太少了。</p>
+        <div class="who"><span class="av" style="background:#1c2a38">路</span> 路过人间 <span class="stars">★★★★★</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 企业动态 -->
+<section class="sec" id="news">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">企业动态</span>
+        <h2>官方发布与更新日志</h2>
+      </div>
+      <p>关于内容更新、活动报名与平台规则的正式信息，均以本栏目发布为准。</p>
+    </div>
+    <div class="news-list">
+      <div class="news-item">
+        <time>2025-03-18</time>
+        <div>
+          <h3>《涡轮之下》第 6 集上线，同步开放技术问答页</h3>
+          <p>本期附装配顺序说明与常见问题清单，可在内容页底部查看。</p>
+        </div>
+        <span class="badge">官方发布</span>
+      </div>
+      <div class="news-item">
+        <time>2025-03-12</time>
+        <div>
+          <h3>2025 动力影像创作挑战赛开启报名</h3>
+          <p>面向所有创作者征集工业与动力主题短片，评审团由工程师与导演共同组成。</p>
+        </div>
+        <span class="badge">报名中</span>
+      </div>
+      <div class="news-item">
+        <time>2025-03-05</time>
+        <div>
+          <h3>创作者认证体系升级，新增技术审校环节</h3>
+          <p>涉及机械结构、维修流程与安全操作的内容，将由外部顾问参与复核。</p>
+        </div>
+        <span class="badge">平台更新</span>
+      </div>
+      <div class="news-item">
+        <time>2025-02-26</time>
+        <div>
+          <h3>极寒动力专题第六季拍摄完成</h3>
+          <p>测试车队完成高纬度路线采集，完整数据将在专题页分批公开。</p>
+        </div>
+        <span class="badge">专题进度</span>
+      </div>
+      <div class="news-item">
+        <time>2025-02-14</time>
+        <div>
+          <h3>关于内容画质与字幕规范的说明</h3>
+          <p>官方发布内容统一提供高清版本与完整字幕，便于检索与二次学习。</p>
+        </div>
+        <span class="badge">规范说明</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ + 联系 -->
+<section class="sec alt" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">帮助与联系</span>
+        <h2>常见问题</h2>
+      </div>
+      <p>关于投稿、认证、版权与合作的常见疑问，先看这里，仍有问题可随时联系我们。</p>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>如何向平台投稿自己的视频作品？</summary>
+        <p>通过页面底部的联系入口提交作品基本信息与观看链接，编辑会在五个工作日内回复。涉及机械结构或维修流程的内容，需提供简要的技术说明以便审校。</p>
+      </details>
+      <details>
+        <summary>创作者认证需要满足哪些条件？</summary>
+        <p>需要至少三件原创作品、明确的专业方向，以及可核实的从业或学习背景。认证通过后会获得专属标识，并参与平台的季度选题共创。</p>
+      </details>
+      <details>
+        <summary>内容画质与字幕有什么标准？</summary>
+        <p>官方发布内容统一提供高清版本，字幕需与讲解完全对应。涉及专业术语时，会在首次出现处附简要注释，方便非专业观众理解。</p>
+      </details>
+      <details>
+        <summary>可以转载平台的内容吗？</summary>
+        <p>平台内容均为原创或已获授权，转载需提前取得书面许可，并保留完整署名与原文链接。商业用途请单独联系我们沟通授权范围。</p>
+      </details>
+      <details>
+        <summary>专题内容多久更新一次？</summary>
+        <p>技术类专题按季度更新，影像与人物类专题按月更新。重大活动期间会推出特别篇，具体安排以企业动态栏目的发布为准。</p>
+      </details>
+      <details>
+        <summary>品牌合作与内容共创如何对接？</summary>
+        <p>我们与工业、运输、机械制造领域的伙伴长期合作，可提供选题策划、现场拍摄与技术审校支持。合作请通过联系表单说明需求与时间安排。</p>
+      </details>
+    </div>
+
+    <div class="contact-wrap" style="margin-top:56px" id="contact">
+      <div class="contact-card">
+        <h3>加入动力影像社区</h3>
+        <p>无论你是工程师、摄影师，还是单纯对机械着迷的观众，这里都为你留了一个位置。官方团队会认真阅读每一条来信。</p>
+        <div class="contact-list">
+          <div><b>合作邮箱</b><span>partner@russian-engine.example</span></div>
+          <div><b>投稿通道</b><span>每周一至周五 10:00 - 18:00 处理</span></div>
+          <div><b>办公地址</b><span>工业影像中心 · 三层内容制作部</span></div>
+        </div>
+        <button class="btn btn-primary" id="joinBtn">立即投稿</button>
+      </div>
+      <form class="form-card" id="contactForm">
+        <h3>给我们留言</h3>
+        <label for="cname">称呼</label>
+        <input id="cname" type="text" placeholder="怎么称呼你">
+        <label for="cmail">联系方式</label>
+        <input id="cmail" type="text" placeholder="邮箱或社交账号">
+        <label for="cmsg">想说的话</label>
+        <textarea id="cmsg" placeholder="投稿、合作或建议，都可以写在这里"></textarea>
+        <button class="btn btn-primary" type="submit">提交留言</button>
+        <div class="form-msg" id="formMsg">已收到你的留言，我们会尽快回复。</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo"><span class="mark">Р</span><span>俄罗斯引擎<small>RUSSIAN ENGINE</small></span></div>
+        <p>俄罗斯引擎官方网站，深耕动力与机械领域的原创视频内容平台，持续运营，坚持正版高清与专业审校。</p>
+        <div class="tagline">驱动热爱 · 记录真实 · 与行业一同成长</div>
+      </div>
+      <div class="foot-col">
+        <h4>内容</h4>
+        <a href="#focus">视频焦点</a>
+        <a href="#topics">专题企划</a>
+        <a href="#flow">热门视频流</a>
+        <a href="#wall">影像墙</a>
+      </div>
+      <div class="foot-col">
+        <h4>社区</h4>
+        <a href="#creators">创作者矩阵</a>
+        <a href="#stories">故事与回响</a>
+        <a href="#news">企业动态</a>
+        <a href="#contact">投稿加入</a>
+      </div>
+      <div class="foot-col">
+        <h4>支持</h4>
+        <a href="#faq">常见问题</a>
+        <a href="#contact">联系我们</a>
+        <p>合作邮箱：partner@russian-engine.example</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 俄罗斯引擎官方网站 · 版权所有 · 持续运营中</span>
+      <span>内容备案占位号：000000000 · 品牌信息以官方发布为准</span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="回到顶部">↑</button>
+<div id="toast" role="status"></div>
+
+<div class="modal" id="shareModal">
+  <div class="modal-box">
+    <button class="close" data-close="shareModal" aria-label="关闭">✕</button>
+    <h3>分享这条内容</h3>
+    <p id="shareTitle">把喜欢的内容转给同好，一起聊聊动力那些事。</p>
+    <div class="share-row">
+      <button data-share="微信">微信</button>
+      <button data-share="微博">微博</button>
+      <button data-share="QQ">QQ</button>
+      <button data-share="复制链接">复制链接</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="joinModal">
+  <div class="modal-box">
+    <button class="close" data-close="joinModal" aria-label="关闭">✕</button>
+    <h3>投稿入口</h3>
+    <p>请准备作品标题、时长、拍摄设备与一段三百字以内的内容说明，发送至合作邮箱。工程师与编辑会在五个工作日内给出反馈，优质作品将进入官方推荐位。</p>
+    <button class="btn btn-primary" id="copyMail">复制投稿邮箱</button>
+  </div>
+</div>
+
+<div class="modal author-modal" id="authorModal">
+  <div class="modal-box">
+    <button class="close" data-close="authorModal" aria-label="关闭">✕</button>
+    <div class="avatar" id="authorAvatar">安</div>
+    <h3 id="authorName">安德烈 · 动力实验室</h3>
+    <div class="field" id="authorField">拆解 / 技术科普</div>
+    <p id="authorDesc">机械工程硕士，八年一线维修经验，擅长把复杂结构讲成常识。</p>
+    <p style="margin-top:10px;color:#8a949f;font-size:12.5px">认证创作者 · 内容经技术审校 · 作品持续更新中</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var toastEl = document.getElementById('toast');
+  var toastTimer = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2200);
+  }
+
+  /* 移动端导航 */
+  var burger = document.getElementById('burger');
+  var mainNav = document.getElementById('mainNav');
+  burger.addEventListener('click', function(){
+    mainNav.classList.toggle('open');
+  });
+  mainNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mainNav.classList.remove('open'); });
+  });
+
+  /* 搜索 */
+  var dataList = [
+    '涡轮增压拆解全流程',
+    '高压共轨系统深度讲解',
+    '极寒低温启动实测',
+    '两千公里干线长测数据',
+    '机械师人物访谈',
+    '工业影像拍摄幕后',
+    '老厂房历史档案',
+    '传动结构科普'
+  ];
+  var searchInput = document.getElementById('searchInput');
+  var searchHint = document.getElementById('searchHint');
+  function runSearch(){
+    var q = searchInput.value.trim();
+    if(!q){
+      searchHint.innerHTML = '<div class="none">输入机型、技术或创作者名称试试</div>';
+      searchHint.classList.add('show');
+      return;
+    }
+    var hits = dataList.filter(function(d){ return d.indexOf(q) > -1; });
+    if(hits.length){
+      searchHint.innerHTML = hits.map(function(h){
+        return '<div>' + h + '</div>';
+      }).join('');
+      searchHint.classList.add('show');
+    }else{
+      searchHint.innerHTML = '<div class="none">没有匹配结果，换个关键词？</div>';
+      searchHint.classList.add('show');
+    }
+  }
+  document.getElementById('searchBtn').addEventListener('click', function(){
+    runSearch();
+    toast('已为你检索相关内容');
+  });
+  searchInput.addEventListener('input', function(){
+    if(!searchInput.value.trim()){ searchHint.classList.remove('show'); return; }
+    runSearch();
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.search')) searchHint.classList.remove('show');
+  });
+
+  /* 标签筛选 */
+  var filterRow = document.getElementById('filterRow');
+  var flowGrid = document.getElementById('flowGrid');
+  filterRow.addEventListener('click', function(e){
+    var btn = e.target.closest('button');
+    if(!btn) return;
+    filterRow.querySelectorAll('button').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    var f = btn.getAttribute('data-f');
+    flowGrid.querySelectorAll('.vcard').forEach(function(card){
+      var show = (f === 'all') || (card.getAttribute('data-tag') === f);
+      card.style.display = show ? '' : 'none';
+    });
+  });
+
+  /* 点赞 / 收藏 / 分享 */
+  function parseNum(t){ return parseInt(t.replace(/,/g,''),10) || 0; }
+  function fmt(n){ return n.toLocaleString('en-US'); }
+  document.addEventListener('click', function(e){
+    var like = e.target.closest('.like');
+    if(like){
+      var numEl = like.querySelector('.num');
+      var n = parseNum(numEl.textContent);
+      if(like.classList.contains('on')){
+        like.classList.remove('on');
+        like.querySelector('.ic').textContent = '♡';
+        numEl.textContent = fmt(n - 1);
+      }else{
+        like.classList.add('on');
+        like.querySelector('.ic').textContent = '♥';
+        numEl.textContent = fmt(n + 1);
+        toast('已点赞');
+      }
+      return;
+    }
+    var fav = e.target.closest('.fav');
+    if(fav){
+      fav.classList.toggle('on');
+      var on = fav.classList.contains('on');
+      fav.querySelector('.ic').textContent = on ? '★' : '☆';
+      toast(on ? '已收藏到我的片单' : '已取消收藏');
+      return;
+    }
+    var share = e.target.closest('.share');
+    if(share){
+      var card = share.closest('.vcard');
+      var t = card ? card.querySelector('h3').textContent : '这条内容';
+      document.getElementById('shareTitle').textContent = '把《' + t + '》转给同好，一起聊聊动力那些事。';
+      document.getElementById('shareModal').classList.add('show');
+    }
+  });
+
+  /* 弹窗关闭 */
+  document.querySelectorAll('[data-close]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.getElementById(btn.getAttribute('data-close')).classList.remove('show');
+    });
+  });
+  document.querySelectorAll('.modal').forEach(function(m){
+    m.addEventListener('click', function(e){
+      if(e.target === m) m.classList.remove('show');
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.modal').forEach(function(m){ m.classList.remove('show'); });
+    }
+  });
+
+  /* 分享按钮 */
+  document.querySelectorAll('[data-share]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var kind = b.getAttribute('data-share');
+      if(kind === '复制链接'){
+        var url = location.origin + location.pathname + location.hash;
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(url).then(function(){
+            toast('链接已复制');
+          }).catch(function(){ toast('复制失败，请手动复制'); });
+        }else{
+          toast('当前环境不支持自动复制');
+        }
+      }else{
+        toast('已唤起' + kind + '分享');
+      }
+      document.getElementById('shareModal').classList.remove('show');
+    });
+  });
+
+  /* 创作者档案 */
+  var creators = [
+    {a:'安',n:'安德烈 · 动力实验室',f:'拆解 / 技术科普',d:'机械工程硕士，八年一线维修经验，擅长把复杂结构讲成常识。代表系列《涡轮之下》累计播放超过四百万次。',c:'#2b4a68'},
+    {a:'卡',n:'卡佳记录',f:'人物访谈',d:'纪录片导演出身，长期跟踪运输与制造业一线人物，镜头克制而温暖，访谈常以沉默与细节取胜。',c:'#7a5c3e'},
+    {a:'维',n:'维克多视觉',f:'工业影像',d:'专注重型机械摄影，作品多次入选工业题材影像展，强调线条、反光与低频噪点带来的现场感。',c:'#2f5d4a'},
+    {a:'斯',n:'斯维特影像',f:'冬季实测',d:'常驻高纬度地区，记录极寒环境下的设备表现，所有测试数据与路线信息完整公开，强调可复现。',c:'#8a3d2e'}
+  ];
+  document.querySelectorAll('.author-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var c = creators[parseInt(btn.getAttribute('data-a'),10)];
+      if(!c) return;
+      var av = document.getElementById('authorAvatar');
+      av.textContent = c.a;
+      av.style.background = c.c;
+      document.getElementById('authorName').textContent = c.n;
+      document.getElementById('authorField').textContent = c.f;
+      document.getElementById('authorDesc').textContent = c.d;
+      document.getElementById('authorModal').classList.add('show');
+    });
+  });
+
+  /* 投稿 */
+  document.getElementById('joinBtn').addEventListener('click', function(){
+    document.getElementById('joinModal').classList.add('show');
+  });
+  document.getElementById('copyMail').addEventListener('click', function(){
+    var mail = 'partner@russian-engine.example';
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(mail).then(function(){
+        toast('投稿邮箱已复制');
+      }).catch(function(){ toast('复制失败，请手动记录'); });
+    }else{
+      toast('请手动记录：' + mail);
+    }
+    document.getElementById('joinModal').classList.remove('show');
+  });
+
+  /* 联系表单 */
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('cname').value.trim();
+    var msg = document.getElementById('cmsg').value.trim();
+    if(!name || !msg){
+      toast('请填写称呼与留言内容');
+      return;
+    }
+    document.getElementById('formMsg').style.display = 'block';
+    toast('留言已提交，感谢你的反馈');
+    this.reset();
+  });
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 520) toTop.classList.add('show');
+    else toTop.classList.remove('show');
+  });
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* 锚点偏移补偿（吸顶公告与页头高度） */
+  var stickyOffset = 122;
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if(id.length < 2) return;
+      var target = document.querySelector(id);
+      if(!target) return;
+      e.preventDefault();
+      var top = target.getBoundingClientRect().top + window.scrollY - stickyOffset;
+      window.scrollTo({top: top, behavior:'smooth'});
+      history.replaceState(null, '', id);
+    });
+  });
+})();
+</script>
+</body>
+                              </html>
